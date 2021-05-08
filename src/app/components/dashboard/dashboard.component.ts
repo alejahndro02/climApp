@@ -13,9 +13,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  obtenerClima(){
-    console.log(this.ciudad);
-    this._climaService.getClima(this.ciudad).subscribe(data => {console.log(data);
+  obtenerClima() {
+    this._climaService.getClima(this.ciudad).subscribe(data => {
+      console.log(data);
     })
   }
 }
