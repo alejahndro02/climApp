@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClimaService {
-  url ="api.openweathermap.org/data/2.5/weather?&appid=";
-  key ="d00d0e1aab52e40004e8f75bad24c769";
+  url = 'http://api.openweathermap.org/data/2.5/weather?&appid=';
+  key = 'd00d0e1aab52e40004e8f75bad24c769';
   constructor(private http: HttpClient) { }
   
-  getClima(ciudad: string):Observable<any>{
-    const URL = this.url+'&q='+ciudad +this.key ;
-    return this.http.get(URL);
+  getClima(ciudad: string): Observable<any> {
+    const URL = this.url + this.key + '&q='+ ciudad;
+    return this.http.get(URL)
   }
 }
